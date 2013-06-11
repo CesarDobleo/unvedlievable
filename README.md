@@ -23,3 +23,8 @@ Call the plugin when or where you want:
 Do your funky stuff with it!
 
 ## Other things
+
+There are a couple of things you can do with this plugin:
+
+$.unvedlievable(options);
+
