@@ -8,7 +8,7 @@ This plugin allow you to automatically get the transcription of the Google VED p
 
 # How to #
 
-Include the script in your head (and don't forget to include jQuery):
+Include the script in your head (and don't forget to include jQuery - tested in 1.4.2+):
 
     <script type="text/javascript" src="path/to/js/jquery.js"></script>
     <script type="text/javascript" src="path/to/js/jquery.unvedlievable.js"></script>
