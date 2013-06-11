@@ -1,32 +1,32 @@
-(function(jQuery) {
-	jQuery.unvedlievable = function(options,callback){
+(function($) {
+	$.unvedlievable = function(options,callback){
 		if(typeof(options)=='function'){
 			var t = callback;
 			callback = options;
 			options = t;
 		}
-		jQuery.unvedlievable.opc = jQuery.extend( jQuery.unvedlievable.opc_default, options );
-		var ved = jQuery.unvedlievable.getRefParams(jQuery.unvedlievable.opc.url).ved;
+		$.unvedlievable.opc = $.extend( $.unvedlievable.opc_default, options );
+		var ved = $.unvedlievable.getRefParams($.unvedlievable.opc.url).ved;
 		if(ved){
-			for(i in jQuery.unvedlievable.veds()){
+			for(i in $.unvedlievable.veds()){
 				if(ved.indexOf(i)!=-1){
-					return jQuery.unvedlievable.returning(callback,jQuery.unvedlievable.veds()[i]);
+					return $.unvedlievable.returning(callback,$.unvedlievable.veds()[i]);
 				}
 			}
-			return jQuery.unvedlievable.returning(callback,'No VED transcription found');
+			return $.unvedlievable.returning(callback,'No VED transcription found');
 		}
-		return jQuery.unvedlievable.returning(callback,'No VED param found');
+		return $.unvedlievable.returning(callback,'No VED param found');
 	};
-	jQuery.unvedlievable.returning = function(callback,data){
+	$.unvedlievable.returning = function(callback,data){
 		if(callback){
 			callback(data);
 		} else {
 			return data;
 		}
 	};
-	jQuery.unvedlievable.opc;
+	$.unvedlievable.opc;
 	
-	jQuery.unvedlievable.opc_default = {
+	$.unvedlievable.opc_default = {
 		url:document.referrer,
 		texts:{
 			organic_search:						'Organic search',
@@ -41,20 +41,20 @@
 		}
 	};
 	
-	jQuery.unvedlievable.veds = function(){
+	$.unvedlievable.veds = function(){
 		return {
-			QFj:	jQuery.unvedlievable.opc.texts.organic_search,
-			QqQlw:	jQuery.unvedlievable.opc.texts.news_onebox_link,
-			Qpwl:	jQuery.unvedlievable.opc.texts.news_onebox_image,
-			Q9QEw:	jQuery.unvedlievable.opc.texts.image_onebox,
-			Qtwlw:	jQuery.unvedlievable.opc.texts.video_onebox_link,
-			QuAlw:	jQuery.unvedlievable.opc.texts.video_onebox_image,
-			Qjb:	jQuery.unvedlievable.opc.texts.organic_search_sitelink,
-			BEPwd:	jQuery.unvedlievable.opc.texts.knowledge_graph_image_leading,
-			BEP4d:	jQuery.unvedlievable.opc.texts.knowledge_graph_image_nonleading
+			QFj:	$.unvedlievable.opc.texts.organic_search,
+			QqQlw:	$.unvedlievable.opc.texts.news_onebox_link,
+			Qpwl:	$.unvedlievable.opc.texts.news_onebox_image,
+			Q9QEw:	$.unvedlievable.opc.texts.image_onebox,
+			Qtwlw:	$.unvedlievable.opc.texts.video_onebox_link,
+			QuAlw:	$.unvedlievable.opc.texts.video_onebox_image,
+			Qjb:	$.unvedlievable.opc.texts.organic_search_sitelink,
+			BEPwd:	$.unvedlievable.opc.texts.knowledge_graph_image_leading,
+			BEP4d:	$.unvedlievable.opc.texts.knowledge_graph_image_nonleading
 		};
 	};
-	jQuery.unvedlievable.getRefParams = function(url){
+	$.unvedlievable.getRefParams = function(url){
 		if(!url) url = document.referrer;
 		var url_params = new Object();
 		if(typeof(url.split('?')[1])=='string'){
