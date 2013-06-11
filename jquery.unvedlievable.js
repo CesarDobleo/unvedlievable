@@ -1,6 +1,7 @@
 (function(jQuery) {
-  jQuery.unvedlievable = function(url){
-    var veds = {
+     jQuery.unvedlievable = function(url)
+     {
+		var veds = {
 			QFj:	'Organic search',
 			QqQlw:	'News OneBox (link)',
 			Qpwl:	'News OneBox (image)',
@@ -11,15 +12,17 @@
 			BEPwd:	'Knowledge Graph image (leading)',
 			BEP4d:	'Knowledge Graph image (non-leading)'
 		};
-		var ved = jQuery.unvedlievable.getRefParams().ved;
+		var ved = jQuery.unvedlievable.getRefParams(url).ved;
 		if(ved){
 			for(i in veds){
 				if(ved.indexOf(i)!=-1) return veds[i];
 			}
+			return 'No VED transcription found';
 		}
-		return false;
+		return 'No VED param found';
     };
-	jQuery.unvedlievable.getRefParams = function(url){
+	jQuery.unvedlievable.getRefParams = function(url)
+	{
 		if(!url) url = document.referrer;
 		var url_params = new Object();
 		if(typeof(url.split('?')[1])=='string'){
