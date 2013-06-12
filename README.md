@@ -44,6 +44,8 @@ $.unvedlievable(options);
 	    		organic_search_sitelink:			'Organic search - Sitelink',
 	    		knowledge_graph_image_leading:		'Knowledge Graph image (leading)',
 	    		knowledge_graph_image_nonleading:	'Knowledge Graph image (non-leading)'
+				no_ved_transcription:				'No VED transcription found',
+				no_ved_found:						'No VED param found'
 	    	}
 	    });
 
